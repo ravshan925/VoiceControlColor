@@ -13,6 +13,8 @@ recognitionUz.onresult = (evt) => {
   let resultUz = evt.results[0][0].transcript;
   LangTypeUz.textContent = "Bosib gapiring !";
 
+  ResultVoice.textContent = evt.results[0][0].transcript;
+
   let body = document.querySelector("body");
 
   if (resultUz == "qizil") {

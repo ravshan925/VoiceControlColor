@@ -10,9 +10,11 @@ microphoneEn.addEventListener("click", () => {
   recognition.start();
 });
 
-recognition.onresult = (ev) => {
-  let resultEn = ev.results[0][0].transcript;
+recognition.onresult = (evt) => {
+  let resultEn = evt.results[0][0].transcript;
   LangTypeEn.textContent = "Press and speak !";
+
+  ResultVoice.textContent = evt.results[0][0].transcript;
 
   let body = document.querySelector("body");
 

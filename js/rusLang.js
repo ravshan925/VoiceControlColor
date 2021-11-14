@@ -9,18 +9,20 @@ microphoneRu.addEventListener("click", () => {
   recognitionRu.start();
 });
 
-recognitionRu.onresult = (ev) => {
-  let resultRu = ev.results[0][0].transcript;
+recognitionRu.onresult = (evt) => {
+  let resultRu = evt.results[0][0].transcript;
+  
+  ResultVoice.textContent = evt.results[0][0].transcript;
+
   LangTypeRu.textContent = "Нажмите и говори !";
 
   let body = document.querySelector("body");
 
   if (resultRu == "чёрный") {
     body.style.background = "black";
-  } else if (resultRu == "желтый") {
-        body.style.background = "yellow";
-  }
-  else if (resultRu == "красный") {
+  } else if (resultRu == "жёлтый") {
+    body.style.background = "yellow";
+  } else if (resultRu == "красный") {
     body.style.background == "red";
   } else if (resultRu == "зеленый") {
     body.style.background = "green";
